@@ -1,0 +1,87 @@
+
+
+
+
+{% extends "my_blog/base.html" %}
+
+
+{% block header %}
+
+<style type="text/css">
+
+   .carousel .carousel-inner img {
+    width: 100%;
+   }
+  </style>
+  <div class="carousel slide" data-ride="carousel" id="imooc-carousel">
+   <!--游标-->
+   <ol class="carousel-indicators">
+    <li data-target="#imooc-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#imooc-carousel" data-slide-to="1"></li>
+    <li data-target="#imooc-carousel" data-slide-to="2"></li>
+    <li data-target="#imooc-carousel" data-slide-to="3"></li>
+   </ol>
+   <!--图片-->
+   <div class="carousel-inner">
+    <div class="item active">
+     <a href="##">
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525784702910&di=ed3d4ee04fc0e4753de061bbda35f2d5&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D55d42195db58ccbf0fb1bd7971b1d64b%2F6d81800a19d8bc3e573f8eed888ba61ea8d345e6.jpg" />
+     </a>
+    </div>
+    <div class="item">
+     <a href="##">
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525784595102&di=805e2accaf5153430c48a47612f109b0&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D1430027424%2C1925376426%26fm%3D214%26gp%3D0.jpg" />
+     </a>
+    </div>
+    <div class="item">
+     <a href="##">
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525784766586&di=f1cb5fd2eec8429cad3255240bb875a3&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D3df24b74fa1f3a294ec5dd8df14cd644%2F2cf5e0fe9925bc31edc6eb3254df8db1ca137085.jpg" />
+     </a>
+    </div>
+    <div class="item">
+     <a href="##">
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525784801833&di=aef2720e45322b25413271011ea16f97&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Ddc9bfb260055b31988f48a362bc0e853%2Feac4b74543a98226bca49c008082b9014a90ebb4.jpg" />
+     </a>
+    </div>
+   </div>
+   <!--控件-->
+   <a class="carousel-control left" href="#imooc-carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+   </a>
+   <a class="carousel-control right" href="#imooc-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+   </a>
+  </div>
+
+  <script type="text/javascript">
+   $('.carousel').carousel({
+    interval: 2000
+   })
+  </script>
+
+
+
+
+
+  <div class='jumbotron'>
+    <h1>Track your learning.</h1>
+    <h2>美好生活，记录你的每一天</h2>
+  </div>
+{% endblock header %}
+
+{% block content %}
+  <h2>
+    <a href="{% url 'users:register' %}">Register an account</a> to makeyour own Learning Log, and list the topics you're learning about.
+  </h2>
+  <h2>Whenever you learn something new about a topic, make an entrysummarizing what you've learned.
+  </h2>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
