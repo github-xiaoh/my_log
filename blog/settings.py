@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1=e3!qr43@v2vq2@8pl^mlnm*p9(d$+6rg5ov9+oqb7ze(drx7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# 安全警告：不要在在线环境中启用调试！
+DEBUG = False 
 
 ALLOWED_HOSTS = [
+        
         '10.2.217.35'
         '192.168.1.113'         
           
@@ -72,7 +74,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'blog/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,6 +143,11 @@ if os.getcwd() == '/app':
     }
     # 让request.is_secure()承认X-Forwarded-Proto头
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    
+    # 只允许Heroku托管这个项目
+    ALLOWED_HOSTS = ['xiaoh-blog.herokuapp.com']
+    DEBUG = False
+
     # 支持所有的主机头（host header）
     ALLOWED_HOSTS = ['*']
     # 静态资产配置

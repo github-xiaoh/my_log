@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 
 from django.core.urlresolvers import reverse
 
@@ -31,7 +31,7 @@ def topics(request):
 @login_required
 def topic(request,topic_id):
     """显示单个主题及其所有的条目"""
-    topic = Topic.objects.get(id=topic_id)
+    topic = get_object_or_404(Topic,id=topic_id)
     if topic.owner != request.user:
         raise Http404
     entries = topic.entry_set.order_by('-date_added')
