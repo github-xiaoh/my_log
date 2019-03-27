@@ -9,7 +9,11 @@
 <form method="post" action="{% url 'users:register' %}">
   {% csrf_token %}
   {{ form.as_p }}
-  <button name="submit">register</button>
+
+   {% buttons %}
+  <button name="submit" class="btn btn-primary btn-blue">register</button>
+   {% endbuttons %}
+
   <input type="hidden" name="next" value="{% url 'my_blog:index' %}" />
 </form>
 
