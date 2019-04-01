@@ -17,6 +17,28 @@ def index(request):
 
 
 
+def file_input(request):
+    if request.method == 'GET':
+        a = {'a':'开始上传'}
+        return render(request, "my_blog/file_input.html",a)
+    else:
+
+        # with open('my_blog/file') as f:
+        file_name = request.FILES.get('file_inputname')
+        a = {'a': file_name+"上传成功"}
+
+        return render(request,"my_blog/file_input.html",a)
+
+# from django.views import View
+#
+# class file_input(View):
+#     def get(self,request):
+#         return render(request,"my_blog/file_input.html")
+#     def post(self,request):
+#         a = {'a':"返回"}
+#         return render(request,"my_blog/file_input.html",a)
+
+
 
 @login_required
 def topics(request):

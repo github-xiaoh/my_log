@@ -39,6 +39,11 @@
               <a href="{% url 'my_blog:topics' %}">Topics</a>
             </li>
           </ul>
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="{% url 'my_blog:file_input' %}">文件上传⏫</a>
+            </li>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
             <li>
