@@ -25,7 +25,12 @@ def file_input(request):
 
         # with open('my_blog/file') as f:
         file_name = request.FILES.get('file_inputname')
-        a = {'a': file_name+"上传成功"}
+
+        if file_name:
+            a = {'a': str(file_name)+"上传成功"}
+        else:
+            file_name = "请上传文件"
+            a = {'a':str(file_name)}
 
         return render(request,"my_blog/file_input.html",a)
 
