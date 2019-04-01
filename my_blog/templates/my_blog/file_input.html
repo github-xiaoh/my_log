@@ -3,8 +3,21 @@
 
 
 {% block content %}
+    <div>
+      <div><a>{{ a }}</a></div>
+      <div>
+          <p>上传文件
+            <form action="{% url "my_blog:file_input" %}"  method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                <p><input type="file" name="file_inputname"></p>
+                <p><input type="submit" value="开始上传"></p>
+            </form>
+          </p>
+      </div>
 
-    <a>{{ a }}</a>
+    </div>
+
+
 {##}
 {#    <p>上传文件#}
 {#        <form action="{% url "my_blog:file_input" %}"  method='post' >#}
@@ -14,13 +27,7 @@
 {#        </form>#}
 {#    </p>#}
 
-    <p>上传文件
-        <form action="{% url "my_blog:file_input" %}"  method='post' enctype="multipart/form-data">
-            {% csrf_token %}
-            <p><input type="file" name="file_inputname"></p>
-            <p><input type="submit" value="开始上传"></p>
-        </form>
-    </p>
+
 
 
 
