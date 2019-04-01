@@ -1,0 +1,27 @@
+
+{% extends "my_blog/base.html" %}
+
+
+{% block content %}
+
+    <a>{{ a }}</a>
+{##}
+{#    <p>上传文件#}
+{#        <form action="{% url "my_blog:file_input" %}"  method='post' >#}
+{#             {% csrf_token %}#}
+{#            <p><input type="file" name="file_inputname"></p>#}
+{#            <p><input type="submit" value="开始上传"></p>#}
+{#        </form>#}
+{#    </p>#}
+
+    <p>上传文件
+        <form action="{% url "my_blog:file_input" %}"  method='post' enctype="multipart/form-data">
+            {% csrf_token %}
+            <p><input type="file" name="file_inputname"></p>
+            <p><input type="submit" value="开始上传"></p>
+        </form>
+    </p>
+
+
+
+{% endblock content %}
