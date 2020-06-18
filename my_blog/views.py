@@ -22,10 +22,12 @@ def file_input(request):
         a = {'a':'开始上传'}
         return render(request, "my_blog/file_input.html",a)
     else:
-
-        # with open('my_blog/file') as f:
+        
         file_name = request.FILES.get('file_inputname')
-
+        with open('my_blog/file/'+str(file_name.name),'wb') as f:
+            for line in file_name:
+                f.write(line)
+            
         if file_name:
             a = {'a': str(file_name)+"上传成功"}
         else:
